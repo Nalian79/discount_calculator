@@ -26,5 +26,7 @@ def calculate_discount(item_cost, relative_discount, absolute_discount):
                 final_cost))
         return final_cost
     else:
-        print("Final Cost of item: {!r} which is too low".format(final_cost))
+        logging.debug(
+            "Default discount of 90% applied: {!r} is invalid price.".format(
+                final_cost))
         return lowest_cost
