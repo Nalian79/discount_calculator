@@ -7,6 +7,11 @@ def calculate_discount(item_cost, relative_discount, absolute_discount):
 
     logging.info("Running program with inputs {}, {}, {}".format(
             item_cost, relative_discount, absolute_discount))
+    item_cost = float(item_cost)
+    relative_discount = float(relative_discount)
+    absolute_discount = float(absolute_discount)
+    if item_cost <= 0 or relative_discount < 0 or absolute_discount < 0:
+        raise ValueError("Negative and zero numbers are not valid")
     cost = float(item_cost)
     logging.debug("Turning item_cost into a float: {!r}".format(cost))
     # Steepest discount we will give is 90%
